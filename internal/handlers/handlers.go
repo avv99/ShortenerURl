@@ -2,10 +2,10 @@ package handlers
 
 import "net/http"
 
-func GetURLByID(w http.ResponseWriter, r *http.Request) {
+func GetTestBody(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello from get url"))
 }
 
-func PostSaveURL(w http.ResponseWriter, r *http.Request) {
+func PostSaveSsilka(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello from post url"))
 }

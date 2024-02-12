@@ -11,11 +11,11 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Post("/", func(w http.ResponseWriter, r *http.Request) {
-		handlers.PostSaveURL(w, r)
+		handlers.PostSaveSsilka(w, r)
 	})
 
 	r.Get("/{id}", func(w http.ResponseWriter, r *http.Request) {
-		handlers.GetURLByID(w, r)
+		handlers.GetTestBody(w, r)
 	})
 
 	log.Println("Я завелся")
