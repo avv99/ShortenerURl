@@ -11,13 +11,13 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Post("/", func(w http.ResponseWriter, r *http.Request) {
-		handlers.PostSaveUrl(w, r)
+		handlers.PostSaveURL(w, r)
 	})
 
 	r.Get("/{id}", func(w http.ResponseWriter, r *http.Request) {
-		handlers.GetUrlByID(w, r)
+		handlers.GetURLByID(w, r)
 	})
-	
+
 	log.Println("Я завелся")
 	http.ListenAndServe(":8080", r)
 
