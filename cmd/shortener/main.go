@@ -1,10 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"github.com/go-chi/chi/v5"
+	"log"
+	"net/http"
+	"shortenerurl/internal/handlers"
+)
 
 func main() {
-	a := 2
-	b := 3
-	fmt.Println(4)
-	fmt.Println(a + b)
+	r := chi.NewRouter()
+
+	r.Post("/", func(w http.ResponseWriter, r *http.Request) {
+		handlers.PostSaveUrl(w, r)
+	})
+
+	r.Get("/{id}", func(w http.ResponseWriter, r *http.Request) {
+		handlers.GetUrlByID(w, r)
+	})
+	
+	log.Println("Я завелся")
+	http.ListenAndServe(":8080", r)
+
 }
