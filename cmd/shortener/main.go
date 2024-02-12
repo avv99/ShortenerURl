@@ -4,18 +4,17 @@ import (
 	"github.com/go-chi/chi/v5"
 	"log"
 	"net/http"
-	"shortenerurl/internal/handlers"
 )
 
 func main() {
 	r := chi.NewRouter()
 
 	r.Post("/", func(w http.ResponseWriter, r *http.Request) {
-		handlers.PostSaveSsilka(w, r)
+		w.Write([]byte("fadsfa"))
 	})
 
 	r.Get("/{id}", func(w http.ResponseWriter, r *http.Request) {
-		handlers.GetTestBody(w, r)
+		w.Write([]byte("fadsfa"))
 	})
 
 	log.Println("Я завелся")
